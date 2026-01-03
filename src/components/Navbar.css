@@ -1,5 +1,5 @@
 .navbar {
-  background-color: var(--charcoal-gray);
+  background-color: var(--construction-black);
   padding: 1rem 0;
   position: sticky;
   top: 0;
@@ -14,7 +14,7 @@
 }
 
 .logo h3 {
-  color: var(--construction-yellow);
+  color: var(--construction-orange);
   font-size: 1.75rem;
   font-weight: 700;
   margin: 0;
@@ -36,7 +36,7 @@
 }
 
 .nav-links a:hover {
-  color: var(--construction-yellow);
+  color: var(--construction-orange);
 }
 
 .nav-links a::after {
@@ -46,7 +46,7 @@
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: var(--construction-yellow);
+  background-color: var(--construction-orange);
   transition: width 0.3s ease;
 }
 

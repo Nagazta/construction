@@ -1,28 +1,48 @@
 import { Link } from 'react-router-dom';
-import { HomeIcon, BuildingIcon, HammerIcon, ClipboardIcon } from '../components/Icons';
+import { HomeIcon, BuildingIcon, HammerIcon, RulerIcon, GlassIcon, BoxIcon, RoadIcon } from '../components/Icons';
 import './Home.css';
 
 function Home() {
   const services = [
     {
-      title: 'Residential Construction',
-      description: 'Homes, townhouses, and renovations built with quality materials and attention to detail.',
-      icon: HomeIcon
+      title: 'Glass Works',
+      description: 'Professional glass installation services for modern and elegant spaces.',
+      icon: GlassIcon
     },
     {
-      title: 'Commercial Construction',
-      description: 'Offices, retail spaces, and small commercial buildings.',
+      title: 'Road Works',
+      description: 'Complete road infrastructure construction and maintenance services.',
+      icon: RoadIcon
+    },
+    {
+      title: 'Drainage Works',
+      description: 'Professional drainage system installation for effective water management.',
+      icon: RoadIcon
+    },
+    {
+      title: 'Vertical Structure',
+      description: 'Structural construction for residential and commercial buildings.',
       icon: BuildingIcon
     },
     {
-      title: 'Renovation & Remodeling',
-      description: 'Structural upgrades, interior improvements, and extensions.',
+      title: 'Modern/Aesthetic Services',
+      description: 'Contemporary design and finishing services for modern spaces.',
+      icon: RulerIcon
+    },
+    {
+      title: 'Modular Works',
+      description: 'Custom modular solutions for organized and functional spaces.',
+      icon: BoxIcon
+    },
+    {
+      title: 'General Maintenance',
+      description: 'Comprehensive maintenance services for all construction needs.',
       icon: HammerIcon
     },
     {
-      title: 'General Contracting',
-      description: 'End-to-end project management and on-site supervision.',
-      icon: ClipboardIcon
+      title: 'Commercial & Residential',
+      description: 'Complete design and construction services from planning to execution.',
+      icon: HomeIcon
     }
   ];
 
@@ -51,10 +71,44 @@ function Home() {
         <div className="container">
           <div className="hero-content">
             <h1>Building Reliable Structures Across Cebu</h1>
-            <p>Cebu-based construction company since 2023, delivering quality and dependable workmanship.</p>
+            <p>Cebu-based construction company providing well-organized work, well-oriented employees, and competitive quality to our clients.</p>
             <div className="hero-buttons">
               <Link to="/projects" className="btn btn-primary">View Our Projects</Link>
               <Link to="/contact" className="btn btn-secondary">Contact Us</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Special Offers */}
+      <section className="special-offers">
+        <div className="container">
+          <div className="section-title">
+            <h2>Special Offers</h2>
+            <p>Cebu-based competitive pricing for quality construction services</p>
+          </div>
+          <div className="offers-grid">
+            <div className="offer-card">
+              <div className="offer-badge">Special Offer</div>
+              <h3>Demolish Package</h3>
+              <p className="offer-note">(Scrap will be ours)</p>
+              <div className="offer-price">
+                <span className="price">PHP 7,500</span>
+                <span className="unit">/ sq m</span>
+              </div>
+              <p className="offer-details">Cebu-based price</p>
+              <p className="offer-note-small">*Negotiable for bigger areas (100 sq m up)</p>
+            </div>
+            <div className="offer-card featured">
+              <div className="offer-badge">Best Value</div>
+              <h3>Full Renovation / Commercial Fitout</h3>
+              <p className="offer-note">Inclusion of mounted FCU/AC installation</p>
+              <div className="offer-price">
+                <span className="price">PHP 38,000</span>
+                <span className="unit">/ sq m</span>
+              </div>
+              <p className="offer-details">Cebu-based price</p>
+              <p className="offer-note-small">*Negotiable for bigger areas (350 sq m up)</p>
             </div>
           </div>
         </div>
@@ -73,7 +127,7 @@ function Home() {
               return (
                 <div key={index} className="service-card">
                   <div className="service-icon">
-                    <Icon size={56} color="var(--construction-yellow)" />
+                    <Icon size={56} color="var(--construction-orange)" />
                   </div>
                   <h3>{service.title}</h3>
                   <p>{service.description}</p>

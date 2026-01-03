@@ -1,5 +1,5 @@
 .contact-hero {
-  background: linear-gradient(135deg, var(--charcoal-gray) 0%, var(--steel-blue) 100%);
+  background: linear-gradient(135deg, var(--construction-black) 0%, var(--construction-red) 100%);
   color: var(--pure-white);
   padding: 6rem 0;
   text-align: center;
@@ -27,7 +27,7 @@
 }
 
 .contact-info h2 {
-  color: var(--charcoal-gray);
+  color: var(--construction-black);
   margin-bottom: 1.5rem;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .info-item h4 {
-  color: var(--charcoal-gray);
+  color: var(--construction-black);
   margin-bottom: 0.5rem;
   font-size: 1.125rem;
 }
@@ -67,7 +67,7 @@
 }
 
 .contact-form-container h2 {
-  color: var(--charcoal-gray);
+  color: var(--construction-black);
   margin-bottom: 1.5rem;
 }
 
@@ -83,7 +83,7 @@
 
 .form-group label {
   display: block;
-  color: var(--charcoal-gray);
+  color: var(--construction-black);
   font-weight: 600;
   margin-bottom: 0.5rem;
   font-size: 0.9375rem;
@@ -93,7 +93,7 @@
 .form-group textarea {
   width: 100%;
   padding: 0.875rem 1rem;
-  border: 2px solid var(--concrete-gray);
+  border: 2px solid #999999;
   border-radius: 4px;
   font-family: var(--font-body);
   font-size: 1rem;
@@ -104,7 +104,7 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--construction-yellow);
+  border-color: var(--construction-orange);
   box-shadow: 0 0 0 3px rgba(244, 180, 0, 0.1);
 }
 

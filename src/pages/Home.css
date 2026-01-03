@@ -1,6 +1,6 @@
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, var(--charcoal-gray) 0%, var(--steel-blue) 100%);
+  background: linear-gradient(135deg, var(--construction-black) 0%, var(--construction-red) 100%);
   color: var(--pure-white);
   padding: 8rem 0;
   text-align: center;
@@ -27,6 +27,132 @@
   gap: 1.5rem;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+/* Special Offers Section */
+.special-offers {
+  background-color: var(--pure-white);
+  padding: 5rem 0;
+}
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.offer-card {
+  background-color: var(--off-white);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border: 3px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.offer-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  border-color: var(--construction-orange);
+}
+
+.offer-card.featured {
+  background: linear-gradient(135deg, var(--construction-orange) 0%, #A66A15 100%);
+  color: var(--pure-white);
+  border-color: var(--construction-orange);
+}
+
+.offer-card.featured h3,
+.offer-card.featured .price {
+  color: var(--pure-white);
+}
+
+.offer-card.featured .offer-note,
+.offer-card.featured .offer-details,
+.offer-card.featured .offer-note-small {
+  color: var(--off-white);
+}
+
+.offer-badge {
+  display: inline-block;
+  background-color: var(--construction-red);
+  color: var(--pure-white);
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+}
+
+.offer-card.featured .offer-badge {
+  background-color: var(--construction-black);
+}
+
+.offer-card h3 {
+  color: var(--construction-black);
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.offer-note {
+  color: var(--text-gray);
+  font-size: 0.9375rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.offer-price {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: var(--pure-white);
+  border-radius: 8px;
+}
+
+.offer-card.featured .offer-price {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.price {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--construction-orange);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.offer-card.featured .price {
+  color: var(--pure-white);
+}
+
+.unit {
+  font-size: 1.125rem;
+  color: var(--text-gray);
+  font-weight: 600;
+}
+
+.offer-card.featured .unit {
+  color: var(--off-white);
+}
+
+.offer-details {
+  color: var(--text-gray);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.offer-note-small {
+  color: var(--text-gray);
+  font-size: 0.8125rem;
+  font-style: italic;
+  margin-top: 1rem;
 }
 
 /* Services Preview Section */
@@ -63,7 +189,7 @@
 }
 
 .service-card h3 {
-  color: var(--charcoal-gray);
+  color: var(--construction-black);
   margin-bottom: 1rem;
   font-size: 1.5rem;
 }
@@ -99,7 +225,7 @@
 }
 
 .project-image-placeholder {
-  background: linear-gradient(135deg, var(--concrete-gray), var(--charcoal-gray));
+  background: linear-gradient(135deg, #666666, var(--construction-black));
   height: 250px;
   display: flex;
   align-items: center;
@@ -114,13 +240,13 @@
 }
 
 .project-info h3 {
-  color: var(--charcoal-gray);
+  color: var(--construction-black);
   margin-bottom: 0.5rem;
   font-size: 1.375rem;
 }
 
 .project-location {
-  color: var(--construction-yellow);
+  color: var(--construction-orange);
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -157,6 +283,18 @@
   .hero-buttons .btn {
     width: 100%;
     max-width: 300px;
+  }
+
+  .offers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .offer-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .price {
+    font-size: 2.5rem;
   }
 
   .services-grid,

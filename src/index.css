@@ -4,12 +4,9 @@
 /* CSS Variables - Brand Colors */
 :root {
   /* Primary Colors */
-  --charcoal-gray: #2B2B2B;
-  --concrete-gray: #6B7280;
-
-  /* Accent Colors */
-  --construction-yellow: #F4B400;
-  --steel-blue: #1F3A5F;
+  --construction-orange: #C27D19;
+  --construction-red: #D21414;
+  --construction-black: #000000;
 
   /* Background */
   --off-white: #F8F9FA;
@@ -45,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.2;
-  color: var(--charcoal-gray);
+  color: var(--construction-black);
 }
 
 h1 {
@@ -78,7 +75,7 @@ a {
 }
 
 a:hover {
-  color: var(--construction-yellow);
+  color: var(--construction-orange);
 }
 
 /* Buttons */
@@ -95,35 +92,35 @@ button, .btn {
 }
 
 .btn-primary {
-  background-color: var(--construction-yellow);
-  color: var(--charcoal-gray);
+  background-color: var(--construction-orange);
+  color: var(--pure-white);
 }
 
 .btn-primary:hover {
-  background-color: #E6A800;
+  background-color: #A66A15;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(244, 180, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(194, 125, 25, 0.3);
 }
 
 .btn-secondary {
-  background-color: var(--charcoal-gray);
+  background-color: var(--construction-red);
   color: var(--pure-white);
 }
 
 .btn-secondary:hover {
-  background-color: #1A1A1A;
+  background-color: #B01111;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(43, 43, 43, 0.3);
+  box-shadow: 0 4px 12px rgba(210, 20, 20, 0.3);
 }
 
 .btn-outline {
   background-color: transparent;
-  color: var(--charcoal-gray);
-  border: 2px solid var(--charcoal-gray);
+  color: var(--construction-black);
+  border: 2px solid var(--construction-black);
 }
 
 .btn-outline:hover {
-  background-color: var(--charcoal-gray);
+  background-color: var(--construction-black);
   color: var(--pure-white);
 }
 

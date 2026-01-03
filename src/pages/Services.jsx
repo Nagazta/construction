@@ -1,54 +1,96 @@
-import { HomeIcon, BuildingIcon, HammerIcon, ClipboardIcon, CheckIcon } from '../components/Icons';
+import { HomeIcon, BuildingIcon, HammerIcon, RulerIcon, BoxIcon, GlassIcon, CameraIcon, RoadIcon, CheckIcon } from '../components/Icons';
 import './Services.css';
 
 function Services() {
   const services = [
     {
-      title: 'Residential Construction',
-      icon: HomeIcon,
-      description: 'Homes, townhouses, and renovations built with quality materials and attention to detail.',
+      title: 'Glass Works',
+      icon: GlassIcon,
+      description: 'Professional glass installation services for modern and elegant spaces.',
       features: [
-        'Single-family homes',
-        'Townhouse developments',
-        'Custom home design and build',
-        'Residential additions',
-        'Home renovations'
+        'Glass doors installation',
+        'Glass windows installation',
+        'Ordinary/Tempered glasses',
+        'Other glass works'
       ]
     },
     {
-      title: 'Commercial Construction',
+      title: 'Road Works',
+      icon: RoadIcon,
+      description: 'Complete road infrastructure construction and maintenance services.',
+      features: [
+        'Road concreting',
+        'Road asphalting',
+        'Road reblocking',
+        'Road repairs',
+        'Road maintenance'
+      ]
+    },
+    {
+      title: 'Drainage Works',
+      icon: RoadIcon,
+      description: 'Professional drainage system installation for effective water management.',
+      features: [
+        'RCPC type drainage',
+        'Channel drainage'
+      ]
+    },
+    {
+      title: 'Vertical Structure',
       icon: BuildingIcon,
-      description: 'Offices, retail spaces, and small commercial buildings.',
+      description: 'Structural construction for residential and commercial buildings.',
       features: [
-        'Office buildings',
-        'Retail spaces',
-        'Small commercial structures',
-        'Interior fit-outs',
-        'Commercial renovations'
+        'Up to 4 storey residential building',
+        'Up to 4 storey commercial building'
       ]
     },
     {
-      title: 'Renovation & Remodeling',
+      title: 'Modern/Aesthetic Services',
+      icon: RulerIcon,
+      description: 'Contemporary design and finishing services for modern spaces.',
+      features: [
+        'Fit-out commercial',
+        'Modular cabinets',
+        'Mural painting'
+      ]
+    },
+    {
+      title: 'Modular Works',
+      icon: BoxIcon,
+      description: 'Custom modular solutions for organized and functional spaces.',
+      features: [
+        'Modular cabinet',
+        'Modular shelves',
+        'Other modular works'
+      ]
+    },
+    {
+      title: 'General Maintenance',
       icon: HammerIcon,
-      description: 'Structural upgrades, interior improvements, and extensions.',
+      description: 'Comprehensive maintenance services for all construction needs.',
       features: [
-        'Structural modifications',
-        'Interior remodeling',
-        'Kitchen and bathroom upgrades',
-        'Building extensions',
-        'Property restoration'
+        'Painting works',
+        'Electrical works',
+        'Carpentry works',
+        'Plumbing works'
       ]
     },
     {
-      title: 'General Contracting',
-      icon: ClipboardIcon,
-      description: 'End-to-end project management and on-site supervision.',
+      title: 'Commercial & Residential',
+      icon: HomeIcon,
+      description: 'Complete design and construction services from planning to execution.',
       features: [
-        'Project planning and coordination',
-        'On-site supervision',
-        'Quality control',
-        'Subcontractor management',
-        'Timeline and budget management'
+        'Fit out',
+        'Demolish',
+        'Floor plans',
+        'Electrical plans',
+        'Plumbing plans',
+        'Mechanical plans',
+        'HVAC plans',
+        'Architectural plans',
+        'Structural plans',
+        'Rendered/3D designs',
+        'Signed and sealed by architect and engineers'
       ]
     }
   ];
@@ -67,9 +109,9 @@ function Services() {
           <div className="services-intro">
             <h2>What We Offer</h2>
             <p>
-              At SolidForm Construction, we provide a full range of construction services designed
-              to meet the diverse needs of our clients. From residential builds to commercial projects,
-              our experienced team delivers quality workmanship and reliable service on every project.
+              At South Cebu Construction, we provide a full range of construction services designed
+              to meet the diverse needs of our clients. We are very detailed when it comes to our services
+              to satisfy the clients' needs and demands, delivering quality workmanship on every project.
             </p>
           </div>
 
@@ -80,7 +122,7 @@ function Services() {
                 <div key={index} className="service-detail-card">
                   <div className="service-header">
                     <div className="service-icon-large">
-                      <Icon size={64} color="var(--construction-yellow)" />
+                      <Icon size={64} color="var(--construction-orange)" />
                     </div>
                     <div>
                       <h3>{service.title}</h3>
@@ -92,7 +134,7 @@ function Services() {
                     <ul>
                       {service.features.map((feature, idx) => (
                         <li key={idx}>
-                          <CheckIcon size={16} color="var(--construction-yellow)" />
+                          <CheckIcon size={16} color="var(--construction-orange)" />
                           {feature}
                         </li>
                       ))}

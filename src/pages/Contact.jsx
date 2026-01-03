@@ -43,7 +43,7 @@ function Contact() {
           from_email: formData.email,
           phone: formData.phone,
           message: formData.message,
-          to_email: 'kyle.sepulveda27@gmail.com',
+          to_email: 'southcebucons@gmail.com',
           time: dateTime
         },
         EMAILJS_CONFIG.publicKey
@@ -87,37 +87,37 @@ function Contact() {
 
               <div className="info-item">
                 <div className="info-icon">
-                  <LocationIcon size={32} color="var(--construction-yellow)" />
+                  <LocationIcon size={32} color="var(--construction-orange)" />
                 </div>
                 <div>
                   <h4>Location</h4>
-                  <p>Minglanilla, Cebu</p>
+                  <p>Minglanilla, Cebu, 6046</p>
                 </div>
               </div>
 
               <div className="info-item">
                 <div className="info-icon">
-                  <EmailIcon size={32} color="var(--construction-yellow)" />
+                  <EmailIcon size={32} color="var(--construction-orange)" />
                 </div>
                 <div>
                   <h4>Email</h4>
-                  <p>kyle.sepulveda27@gmail.com</p>
+                  <p>southcebucons@gmail.com</p>
                 </div>
               </div>
 
               <div className="info-item">
                 <div className="info-icon">
-                  <PhoneIcon size={32} color="var(--construction-yellow)" />
+                  <PhoneIcon size={32} color="var(--construction-orange)" />
                 </div>
                 <div>
                   <h4>Phone</h4>
-                  <p>+63 XXX XXX XXXX</p>
+                  <p>0953-177-4035 / 0926-936-9364</p>
                 </div>
               </div>
 
               <div className="info-item">
                 <div className="info-icon">
-                  <ClockIcon size={32} color="var(--construction-yellow)" />
+                  <ClockIcon size={32} color="var(--construction-orange)" />
                 </div>
                 <div>
                   <h4>Business Hours</h4>

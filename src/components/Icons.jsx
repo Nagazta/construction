@@ -85,3 +85,38 @@ export const CheckIcon = ({ size = 20, color = "currentColor" }) => (
     <path d="M20 6L9 17L4 12" stroke={color} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
+
+export const RulerIcon = ({ size = 48, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3 3L21 21M3 21L21 3" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M8 8L12 12M16 16L12 12M8 16L10 14M16 8L14 10" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+export const BoxIcon = ({ size = 48, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21 16V8C21 7.47 20.79 6.96 20.41 6.59L13.41 0.59C13.04 0.21 12.53 0 12 0C11.47 0 10.96 0.21 10.59 0.59L3.59 6.59C3.21 6.96 3 7.47 3 8V16C3 16.53 3.21 17.04 3.59 17.41L10.59 23.41C10.96 23.79 11.47 24 12 24C12.53 24 13.04 23.79 13.41 23.41L20.41 17.41C20.79 17.04 21 16.53 21 16Z" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M3 8L12 12L21 8M12 12V24" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+export const GlassIcon = ({ size = 48, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="4" y="2" width="16" height="20" rx="1" stroke={color} strokeWidth="2"/>
+    <path d="M8 2V22M16 2V22M4 8H20M4 14H20" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+  </svg>
+);
+
+export const CameraIcon = ({ size = 48, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M23 19C23 19.5304 22.7893 20.0391 22.4142 20.4142C22.0391 20.7893 21.5304 21 21 21H3C2.46957 21 1.96086 20.7893 1.58579 20.4142C1.21071 20.0391 1 19.5304 1 19V8C1 7.46957 1.21071 6.96086 1.58579 6.58579C1.96086 6.21071 2.46957 6 3 6H7L9 3H15L17 6H21C21.5304 6 22.0391 6.21071 22.4142 6.58579C22.7893 6.96086 23 7.46957 23 8V19Z" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <circle cx="12" cy="13" r="4" stroke={color} strokeWidth="2"/>
+  </svg>
+);
+
+export const RoadIcon = ({ size = 48, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2 12L22 12M2 6L22 6M2 18L22 18" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M12 2V4M12 8V10M12 14V16M12 20V22" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);

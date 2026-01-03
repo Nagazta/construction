@@ -1,5 +1,5 @@
 .services-hero {
-  background: linear-gradient(135deg, var(--charcoal-gray) 0%, var(--steel-blue) 100%);
+  background: linear-gradient(135deg, var(--construction-black) 0%, var(--construction-red) 100%);
   color: var(--pure-white);
   padding: 6rem 0;
   text-align: center;
@@ -27,7 +27,7 @@
 }
 
 .services-intro h2 {
-  color: var(--charcoal-gray);
+  color: var(--construction-black);
   margin-bottom: 1.5rem;
 }
 
@@ -49,7 +49,7 @@
   border-radius: 8px;
   padding: 2.5rem;
   transition: all 0.3s ease;
-  border-left: 4px solid var(--construction-yellow);
+  border-left: 4px solid var(--construction-orange);
 }
 
 .service-detail-card:hover {
@@ -72,7 +72,7 @@
 }
 
 .service-header h3 {
-  color: var(--charcoal-gray);
+  color: var(--construction-black);
   font-size: 1.75rem;
   margin-bottom: 0.5rem;
 }
@@ -84,7 +84,7 @@
 }
 
 .service-features h4 {
-  color: var(--charcoal-gray);
+  color: var(--construction-black);
   font-size: 1.125rem;
   margin-bottom: 1rem;
 }
@@ -103,7 +103,7 @@
 }
 
 .services-cta {
-  background: linear-gradient(135deg, var(--charcoal-gray) 0%, var(--steel-blue) 100%);
+  background: linear-gradient(135deg, var(--construction-black) 0%, var(--construction-red) 100%);
   color: var(--pure-white);
   text-align: center;
   padding: 4rem 2rem;
