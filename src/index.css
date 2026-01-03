@@ -1,0 +1,174 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
+/* CSS Variables - Brand Colors */
+:root {
+  /* Primary Colors */
+  --charcoal-gray: #2B2B2B;
+  --concrete-gray: #6B7280;
+
+  /* Accent Colors */
+  --construction-yellow: #F4B400;
+  --steel-blue: #1F3A5F;
+
+  /* Background */
+  --off-white: #F8F9FA;
+  --pure-white: #FFFFFF;
+
+  /* Text */
+  --text-dark: #1A1A1A;
+  --text-gray: #4B5563;
+
+  /* Fonts */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background-color: var(--pure-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--charcoal-gray);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+  color: var(--text-gray);
+  line-height: 1.7;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--construction-yellow);
+}
+
+/* Buttons */
+button, .btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  display: inline-block;
+}
+
+.btn-primary {
+  background-color: var(--construction-yellow);
+  color: var(--charcoal-gray);
+}
+
+.btn-primary:hover {
+  background-color: #E6A800;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(244, 180, 0, 0.3);
+}
+
+.btn-secondary {
+  background-color: var(--charcoal-gray);
+  color: var(--pure-white);
+}
+
+.btn-secondary:hover {
+  background-color: #1A1A1A;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(43, 43, 43, 0.3);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--charcoal-gray);
+  border: 2px solid var(--charcoal-gray);
+}
+
+.btn-outline:hover {
+  background-color: var(--charcoal-gray);
+  color: var(--pure-white);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Section Spacing */
+section {
+  padding: 5rem 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title h2 {
+  margin-bottom: 1rem;
+}
+
+.section-title p {
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 3rem 0;
+  }
+}
