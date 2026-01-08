@@ -448,14 +448,12 @@
 }
 
 .contact-info h3 {
-  color: var(--pure-white);
   font-size: 2rem;
   margin-bottom: 0.75rem;
   font-weight: 700;
 }
 
 .contact-info p {
-  color: var(--off-white);
   margin-bottom: 0.75rem;
   font-size: 1.125rem;
 }
