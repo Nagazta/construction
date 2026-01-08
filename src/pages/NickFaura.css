@@ -389,6 +389,18 @@
   padding: 5rem 2rem;
   position: relative;
   overflow: hidden;
+  border-radius: 24px;
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto; 
+}
+
+@media (max-width: 768px) {
+  .artist-cta {
+    width: 100%;
+    border-radius: 12px;
+    padding: 4rem 1.5rem;
+  }
 }
 
 .artist-cta::before {
@@ -418,8 +430,12 @@
   text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+.para{
+  color: white !important;
+}
+
 .artist-cta > p {
-  color: var(--off-white);
+  color: white;
   font-size: 1.25rem;
   margin-bottom: 3rem;
   text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
@@ -428,7 +444,7 @@
 .contact-info {
   margin-top: 2.5rem;
   padding-top: 2.5rem;
-  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  border-top: none; /* removed thin divider to create seamless hero */
 }
 
 .contact-info h3 {
@@ -439,7 +455,7 @@
 }
 
 .contact-info p {
-  color: #000;
+  color: var(--off-white);
   margin-bottom: 0.75rem;
   font-size: 1.125rem;
 }

@@ -330,7 +330,7 @@ const NickFaura = () => {
       <section className="artist-cta">
         <div className="container">
           <h2>Commission Custom Artwork</h2>
-          <p>Interested in commissioning a mural, canvas painting, or custom art installation?</p>
+          <p className='para'>Interested in commissioning a mural, canvas painting, or custom art installation?</p>
           <div className="contact-info">
             <h3>Nick Veloso-Faura</h3>
             <p>Cebu-Based Artist</p>
