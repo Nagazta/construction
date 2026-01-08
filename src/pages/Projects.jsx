@@ -259,7 +259,7 @@ function Projects() {
             {currentProjects.map((project, index) => (
               <div key={index} className="project-card">
                 <div className="project-image-placeholder">
-                  <img src={project.image} alt={project.title} className="project-image" />
+                  <img src={project.image} alt={project.title} className="project-image" loading="lazy" decoding="async" />
                 </div>
                 <div className="project-content">
                   <h3>{project.title}</h3>

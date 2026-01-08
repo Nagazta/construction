@@ -27,7 +27,7 @@ function About() {
               </p>
             </div>
             <div className="about-image-placeholder">
-              <img src={logo} alt="South Cebu Construction logo" className="about-image" />
+              <img src={logo} alt="South Cebu Construction logo" className="about-image" loading="eager" decoding="async" />
             </div>
           </div>
 
