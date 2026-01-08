@@ -1,3 +1,7 @@
+.about{
+  color: #666666;
+}
+
 .about-hero {
   background: linear-gradient(135deg, var(--construction-black) 0%, var(--construction-red) 100%);
   color: var(--pure-white);
@@ -49,6 +53,29 @@
   color: var(--pure-white);
   font-weight: 600;
   font-size: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-image-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.15);
+  z-index: 2;
+}
+
+.about-image-placeholder img,
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  display: block;
 }
 
 .values-section {

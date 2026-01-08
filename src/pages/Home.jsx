@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import { HomeIcon, BuildingIcon, HammerIcon, RulerIcon, GlassIcon, BoxIcon, RoadIcon } from '../components/Icons';
 import './Home.css';
-
+import img16 from '../assets/images/construction/16.png';
+import img19 from '../assets/images/construction/19.png';
+import img22 from '../assets/images/construction/22.png';
 function Home() {
   const services = [
     {
@@ -48,20 +50,29 @@ function Home() {
 
   const projects = [
     {
-      title: 'Two-Storey Residential House',
-      location: 'Minglanilla, Cebu',
-      description: 'Modern residential build completed with reinforced concrete structure.'
+      title: 'Residential Building',
+      location: 'Cuanos, Minglanilla, Cebu 6046',
+      scope: '70 sq m - OBO requirements design and exterior design, Signed and sealed',
+      duration: '2 Weeks',
+      category: 'Residential',
+      image: img16
     },
     {
-      title: 'Commercial Storefront Renovation',
-      location: 'Cebu South Area',
-      description: 'Full renovation including structural reinforcement and finishing works.'
+      title: 'Residential Building',
+      location: 'Vito, Minglanilla, Cebu',
+      scope: '39sq m - Signed and sealed complete package for OBO',
+      duration: '2 Weeks',
+      category: 'Residential',
+      image: img19
     },
-    {
-      title: 'Townhouse Unit Construction',
-      location: 'Minglanilla',
-      description: 'Multiple-unit residential project with modern layout.'
-    }
+     {
+       title: '2 Floor Fit-out Restaurant - Choobi Choobi Flavors',
+       location: 'Lapu-Lapu City, Cebu',
+       scope: '240sq m - Gencon whole restaurant',
+       duration: '3 Months',
+       category: 'Commercial',
+       image: img22
+     },
   ];
 
   return (
@@ -152,7 +163,7 @@ function Home() {
             {projects.map((project, index) => (
               <div key={index} className="project-card">
                 <div className="project-image-placeholder">
-                  <span>Project Image</span>
+                  <img src={project.image} alt={project.title} className="project-image" />
                 </div>
                 <div className="project-info">
                   <h3>{project.title}</h3>
