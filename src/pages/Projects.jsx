@@ -1,30 +1,55 @@
 import { useState } from 'react';
 import { LocationIcon } from '../components/Icons';
 import './Projects.css';
-import img1 from '../assets/images/construction/1.png';
-import img2 from '../assets/images/construction/2.png';
-import img3 from '../assets/images/construction/3.png';
-import img4 from '../assets/images/construction/4.png';
-import img5 from '../assets/images/construction/5.png';
-import img6 from '../assets/images/construction/6.png';
-import img7 from '../assets/images/construction/7.png';
-import img8 from '../assets/images/construction/8.png';
-import img9 from '../assets/images/construction/9.png';
-import img10 from '../assets/images/construction/10.png';
-import img11 from '../assets/images/construction/11.png';
-import img12 from '../assets/images/construction/12.png';
-import img13 from '../assets/images/construction/13.png';
-import img14 from '../assets/images/construction/14.png';
-import img15 from '../assets/images/construction/15.png';
-import img16 from '../assets/images/construction/16.png';
-import img17 from '../assets/images/construction/17.png';
-import img18 from '../assets/images/construction/18.png';
-import img19 from '../assets/images/construction/19.png';
-import img20 from '../assets/images/construction/20.png';
-import img21 from '../assets/images/construction/21.png';
-import img22 from '../assets/images/construction/22.png';
-import img23 from '../assets/images/construction/23.png';
-import img24 from '../assets/images/construction/24.png';
+// Image imports with responsive webp srcset (vite-imagetools)
+import img1SrcSet from '../assets/images/construction/1.png?w=480;800;1200&format=webp&as=srcset';
+import img1Fallback from '../assets/images/construction/1.png?width=800&format=png&as=src';
+import img2SrcSet from '../assets/images/construction/2.png?w=480;800;1200&format=webp&as=srcset';
+import img2Fallback from '../assets/images/construction/2.png?width=800&format=png&as=src';
+import img3SrcSet from '../assets/images/construction/3.png?w=480;800;1200&format=webp&as=srcset';
+import img3Fallback from '../assets/images/construction/3.png?width=800&format=png&as=src';
+import img4SrcSet from '../assets/images/construction/4.png?w=480;800;1200&format=webp&as=srcset';
+import img4Fallback from '../assets/images/construction/4.png?width=800&format=png&as=src';
+import img5SrcSet from '../assets/images/construction/5.png?w=480;800;1200&format=webp&as=srcset';
+import img5Fallback from '../assets/images/construction/5.png?width=800&format=png&as=src';
+import img6SrcSet from '../assets/images/construction/6.png?w=480;800;1200&format=webp&as=srcset';
+import img6Fallback from '../assets/images/construction/6.png?width=800&format=png&as=src';
+import img7SrcSet from '../assets/images/construction/7.png?w=480;800;1200&format=webp&as=srcset';
+import img7Fallback from '../assets/images/construction/7.png?width=800&format=png&as=src';
+import img8SrcSet from '../assets/images/construction/8.png?w=480;800;1200&format=webp&as=srcset';
+import img8Fallback from '../assets/images/construction/8.png?width=800&format=png&as=src';
+import img9SrcSet from '../assets/images/construction/9.png?w=480;800;1200&format=webp&as=srcset';
+import img9Fallback from '../assets/images/construction/9.png?width=800&format=png&as=src';
+import img10SrcSet from '../assets/images/construction/10.png?w=480;800;1200&format=webp&as=srcset';
+import img10Fallback from '../assets/images/construction/10.png?width=800&format=png&as=src';
+import img11SrcSet from '../assets/images/construction/11.png?w=480;800;1200&format=webp&as=srcset';
+import img11Fallback from '../assets/images/construction/11.png?width=800&format=png&as=src';
+import img12SrcSet from '../assets/images/construction/12.png?w=480;800;1200&format=webp&as=srcset';
+import img12Fallback from '../assets/images/construction/12.png?width=800&format=png&as=src';
+import img13SrcSet from '../assets/images/construction/13.png?w=480;800;1200&format=webp&as=srcset';
+import img13Fallback from '../assets/images/construction/13.png?width=800&format=png&as=src';
+import img14SrcSet from '../assets/images/construction/14.png?w=480;800;1200&format=webp&as=srcset';
+import img14Fallback from '../assets/images/construction/14.png?width=800&format=png&as=src';
+import img15SrcSet from '../assets/images/construction/15.png?w=480;800;1200&format=webp&as=srcset';
+import img15Fallback from '../assets/images/construction/15.png?width=800&format=png&as=src';
+import img16SrcSet from '../assets/images/construction/16.png?w=480;800;1200&format=webp&as=srcset';
+import img16Fallback from '../assets/images/construction/16.png?width=800&format=png&as=src';
+import img17SrcSet from '../assets/images/construction/17.png?w=480;800;1200&format=webp&as=srcset';
+import img17Fallback from '../assets/images/construction/17.png?width=800&format=png&as=src';
+import img18SrcSet from '../assets/images/construction/18.png?w=480;800;1200&format=webp&as=srcset';
+import img18Fallback from '../assets/images/construction/18.png?width=800&format=png&as=src';
+import img19SrcSet from '../assets/images/construction/19.png?w=480;800;1200&format=webp&as=srcset';
+import img19Fallback from '../assets/images/construction/19.png?width=800&format=png&as=src';
+import img20SrcSet from '../assets/images/construction/20.png?w=480;800;1200&format=webp&as=srcset';
+import img20Fallback from '../assets/images/construction/20.png?width=800&format=png&as=src';
+import img21SrcSet from '../assets/images/construction/21.png?w=480;800;1200&format=webp&as=srcset';
+import img21Fallback from '../assets/images/construction/21.png?width=800&format=png&as=src';
+import img22SrcSet from '../assets/images/construction/22.png?w=480;800;1200&format=webp&as=srcset';
+import img22Fallback from '../assets/images/construction/22.png?width=800&format=png&as=src';
+import img23SrcSet from '../assets/images/construction/23.png?w=480;800;1200&format=webp&as=srcset';
+import img23Fallback from '../assets/images/construction/23.png?width=800&format=png&as=src';
+import img24SrcSet from '../assets/images/construction/24.png?w=480;800;1200&format=webp&as=srcset';
+import img24Fallback from '../assets/images/construction/24.png?width=800&format=png&as=src';
 
 
 function Projects() {
@@ -38,7 +63,9 @@ function Projects() {
       scope: '110 M long drainage (20M canal/80pcs 18" RCPC), 10pcs of concrete manhole with concrete covers',
       duration: '18 Days',
       category: 'Infrastructure',
-      image: img1
+      image: img1Fallback,
+      imageSrcSet: img1SrcSet, // webp srcset generated at build-time
+      imageType: 'image/webp'
     },
     {
       title: 'BJMP Detention Cell',
@@ -46,7 +73,9 @@ function Projects() {
       scope: '2-storey detention cell, 46sq lot area',
       duration: '3.5 Months',
       category: 'Commercial',
-      image: img2
+      image: img2Fallback || img2,
+      imageSrcSet: img2SrcSet,
+      imageType: 'image/webp'
     },
     {
       title: 'Drainage System',
@@ -54,7 +83,9 @@ function Projects() {
       scope: '245 M long drainage (60M canal/80pcs 18" RCPC), 15pcs of concrete manhole with concrete covers',
       duration: '2 Months & 10 Days',
       category: 'Infrastructure',
-      image: img3
+      image: img3Fallback || img3,
+      imageSrcSet: img3SrcSet,
+      imageType: 'image/webp'
     },
     {
       title: 'Pueblo San Ricardo',
@@ -62,7 +93,9 @@ function Projects() {
       scope: 'Painting works, Interior fit-out works',
       duration: '1 Month',
       category: 'Interior',
-      image: img4
+      image: img4Fallback || img4,
+      imageSrcSet: img4SrcSet,
+      imageType: 'image/webp'
     },
     {
       title: 'Birkenstock Ayala',
@@ -70,7 +103,9 @@ function Projects() {
       scope: 'Fixed tempered glass, Glass doors',
       duration: '2 Days',
       category: 'Glass Works',
-      image: img5
+      image: img5Fallback || img5,
+      imageSrcSet: img5SrcSet,
+      imageType: 'image/webp'
     },
     {
       title: 'Elevated Water Tank',
@@ -78,7 +113,9 @@ function Projects() {
       scope: '7M elevated steel works with paint, Installation of 4,000L water tank, Plumbing works from source to tank',
       duration: '1 Week',
       category: 'Infrastructure',
-      image: img6
+      image: img6Fallback || img6,
+      imageSrcSet: img6SrcSet,
+      imageType: 'image/webp'
     },
     {
       title: '10-Doors Apartment',
@@ -86,7 +123,9 @@ function Projects() {
       scope: 'Painting of exterior walls, 20 sets solid doors, 20 sets flush doors, 30 sets door knobs, 40 sets sliding window, Rectifying and replacement stairs',
       duration: '3 Weeks',
       category: 'Residential',
-      image: img7
+      image: img7Fallback || img7,
+      imageSrcSet: img7SrcSet,
+      imageType: 'image/webp'
     },
     {
       title: 'Drainage System',
@@ -94,7 +133,9 @@ function Projects() {
       scope: '280M drainage system, 20pcs manhole with concrete covers, All made in 24" RCPC',
       duration: '3 Months',
       category: 'Infrastructure',
-      image: img8
+      image: img8Fallback || img8,
+      imageSrcSet: img8SrcSet,
+      imageType: 'image/webp'
     },
     {
       title: 'Office Renovation',
@@ -102,7 +143,9 @@ function Projects() {
       scope: '50sq m renovation - Roofing works, Ceiling works, Tiling works, Glass works, Electrical works',
       duration: '1 Month',
       category: 'Commercial',
-      image: img9
+      image: img9Fallback || img9,
+      imageSrcSet: img9SrcSet,
+      imageType: 'image/webp'
     },
     {
       title: 'CCTV Installation',
@@ -110,7 +153,9 @@ function Projects() {
       scope: '1TB CCTV, 3 dome type camera, 32 inch TV, Installation',
       duration: '1 Day',
       category: 'CCTV',
-      image: img10
+      image: img10Fallback || img10,
+      imageSrcSet: img10SrcSet,
+      imageType: 'image/webp'
     },
     {
       title: 'Interior TV Wall Design',
@@ -118,7 +163,9 @@ function Projects() {
       scope: 'Wall TV area lamination, Interior fit-out',
       duration: '3 Days',
       category: 'Interior',
-      image: img11
+      image: img11Fallback || img11,
+      imageSrcSet: img11SrcSet,
+      imageType: 'image/webp'
     },
     {
       title: 'Velmiro Heights',
@@ -126,7 +173,9 @@ function Projects() {
       scope: 'Rectification, Repainting, Plumbing works',
       duration: '1 Week',
       category: 'Renovation',
-      image: img12
+      image: img12Fallback || img12,
+      imageSrcSet: img12SrcSet,
+      imageType: 'image/webp'
     },
     {
       title: 'Design & Renovation',
@@ -134,7 +183,9 @@ function Projects() {
       scope: 'Full condo renovation, Fit-out',
       duration: '2 Weeks',
       category: 'Residential',
-      image: img13
+      image: img13Fallback || img13,
+      imageSrcSet: img13SrcSet,
+      imageType: 'image/webp'
     },
     {
       title: 'Commercial Building',
@@ -142,7 +193,9 @@ function Projects() {
       scope: '490sq m - All structural and fit-out',
       duration: '3 Months',
       category: 'Commercial',
-      image: img14
+      image: img14Fallback || img14,
+      imageSrcSet: img14SrcSet,
+      imageType: 'image/webp'
     },
     {
       title: 'Guest House by the Beach',
@@ -150,7 +203,9 @@ function Projects() {
       scope: '47 sq m - Design and build',
       duration: '3 Months',
       category: 'Residential',
-      image: img15
+      image: img15Fallback || img15,
+      imageSrcSet: img15SrcSet,
+      imageType: 'image/webp'
     },
     {
       title: 'Residential Building',
@@ -158,7 +213,9 @@ function Projects() {
       scope: '70 sq m - OBO requirements design and exterior design, Signed and sealed',
       duration: '2 Weeks',
       category: 'Residential',
-      image: img16
+      image: img16Fallback || img16,
+      imageSrcSet: img16SrcSet,
+      imageType: 'image/webp'
     },
     {
       title: 'Demolition of Fit-out Commercial',
@@ -166,7 +223,9 @@ function Projects() {
       scope: '64 sq m - Full demolition and hauling',
       duration: '1 Week',
       category: 'Demolition',
-      image: img17
+      image: img17Fallback || img17,
+      imageSrcSet: img17SrcSet,
+      imageType: 'image/webp'
     },
     {
       title: 'Commercial Dental Clinic',
@@ -174,7 +233,9 @@ function Projects() {
       scope: '39sq m - Design and build',
       duration: '2 Months',
       category: 'Commercial',
-      image: img18
+      image: img18Fallback || img18,
+      imageSrcSet: img18SrcSet,
+      imageType: 'image/webp'
     },
     {
       title: 'Residential Building',
@@ -182,7 +243,9 @@ function Projects() {
       scope: '39sq m - Signed and sealed complete package for OBO',
       duration: '2 Weeks',
       category: 'Residential',
-      image: img19
+      image: img19Fallback || img19,
+      imageSrcSet: img19SrcSet,
+      imageType: 'image/webp'
     },
     {
       title: 'Toilet and Bath Renovation',
@@ -190,7 +253,9 @@ function Projects() {
       scope: '8 toilet area, 2 shower area, Tiling works, Painting works, Electrical works, Plumbing works',
       duration: '3 Weeks',
       category: 'Renovation',
-      image: img20
+      image: img20Fallback || img20,
+      imageSrcSet: img20SrcSet,
+      imageType: 'image/webp'
     },
     {
       title: 'Fit-out Renovation - Vision Express',
@@ -198,7 +263,9 @@ function Projects() {
       scope: '36sq m - Temporary store fit out',
       duration: '3 Weeks',
       category: 'Commercial',
-      image: img21
+      image: img21Fallback || img21,
+      imageSrcSet: img21SrcSet,
+      imageType: 'image/webp'
     },
     {
       title: '2 Floor Fit-out Restaurant - Choobi Choobi Flavors',
@@ -206,7 +273,9 @@ function Projects() {
       scope: '240sq m - Gencon whole restaurant',
       duration: '3 Months',
       category: 'Commercial',
-      image: img22
+      image: img22Fallback || img22,
+      imageSrcSet: img22SrcSet,
+      imageType: 'image/webp'
     },
     {
       title: '200sqm Fit-out Demolition',
@@ -214,7 +283,9 @@ function Projects() {
       scope: '200sq m - Demolition back to bare unit',
       duration: '1.5 Months',
       category: 'Demolition',
-      image: img23
+      image: img23Fallback || img23,
+      imageSrcSet: img23SrcSet,
+      imageType: 'image/webp'
     },
     {
       title: '230sqm Fit-out Renovation',
@@ -222,7 +293,9 @@ function Projects() {
       scope: '230sq m - Demolation and renovation',
       duration: '4 Months',
       category: 'Demolition',
-      image: img24
+      image: img24Fallback || img24,
+      imageSrcSet: img24SrcSet,
+      imageType: 'image/webp'
     }
   ];
 
@@ -259,7 +332,14 @@ function Projects() {
             {currentProjects.map((project, index) => (
               <div key={index} className="project-card">
                 <div className="project-image-placeholder">
-                  <img src={project.image} alt={project.title} className="project-image" loading="lazy" decoding="async" />
+                  {project.imageSrcSet ? (
+                    <picture>
+                      <source type={project.imageType} srcSet={project.imageSrcSet} sizes="(max-width: 600px) 100vw, 33vw" />
+                      <img src={project.image} alt={project.title} className="project-image" loading="lazy" decoding="async" />
+                    </picture>
+                  ) : (
+                    <img src={project.image} alt={project.title} className="project-image" loading="lazy" decoding="async" />
+                  )}
                 </div>
                 <div className="project-content">
                   <h3>{project.title}</h3>
