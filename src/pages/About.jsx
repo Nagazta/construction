@@ -1,4 +1,5 @@
 import './About.css';
+import logo from '../assets/images/construction/logo.png';
 
 function About() {
   return (
@@ -15,18 +16,18 @@ function About() {
           <div className="about-grid">
             <div className="about-text">
               <h2>Who We Are</h2>
-              <p>
+              <p className='about'>
                 South Cebu Construction is a Cebu-based company owned by a millennial Cebuana who is a dedicated entrepreneur.
                 The start-up company provides well-organized work, well-oriented employees, and competitive quality to its
                 business clients and business partners.
               </p>
-              <p>
+              <p className='about'>
                 South Cebu Construction is very detailed when it comes to their services to satisfy the clients' needs and demands.
                 We combine modern expertise with traditional craftsmanship to deliver exceptional construction solutions.
               </p>
             </div>
             <div className="about-image-placeholder">
-              <span>Company Image</span>
+              <img src={logo} alt="South Cebu Construction logo" className="about-image" />
             </div>
           </div>
 
