@@ -212,6 +212,8 @@ const NickFaura = () => {
                   src={artistPhoto}
                   alt="Nick Veloso-Faura"
                   className="artist-photo"
+                  loading="eager"
+                  decoding="async"
                 />
               ) : (
                 <div className="artist-photo-placeholder">
@@ -281,7 +283,7 @@ const NickFaura = () => {
             {currentPortfolio.map((item, index) => (
               <div key={index} className="portfolio-card">
                 <div className="portfolio-image">
-                  <img src={item.image} alt={item.title} />
+                  <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
                 </div>
                 <div className="portfolio-info">
                   <h3>{item.title}</h3>

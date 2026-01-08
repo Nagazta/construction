@@ -80,13 +80,13 @@ function Contact() {
           <div className="contact-grid">
             <div className="contact-info">
               <h2>Contact Information</h2>
-              <p className="contact-intro">
+              <p className="contact-intro paragraph">
                 Ready to start your construction project? Reach out to us and we'll
                 be happy to discuss your needs and provide a free consultation.
               </p>
 
-              <div className="info-item">
-                <div className="info-icon">
+              <div className="info-item det">
+                <div className="info-icon det">
                   <LocationIcon size={32} color="var(--construction-orange)" />
                 </div>
                 <div>
@@ -95,8 +95,8 @@ function Contact() {
                 </div>
               </div>
 
-              <div className="info-item">
-                <div className="info-icon">
+              <div className="info-item det">
+                <div className="info-icon det">
                   <EmailIcon size={32} color="var(--construction-orange)" />
                 </div>
                 <div>
@@ -105,8 +105,8 @@ function Contact() {
                 </div>
               </div>
 
-              <div className="info-item">
-                <div className="info-icon">
+              <div className="info-item det">
+                <div className="info-icon det">
                   <PhoneIcon size={32} color="var(--construction-orange)" />
                 </div>
                 <div>
@@ -115,8 +115,8 @@ function Contact() {
                 </div>
               </div>
 
-              <div className="info-item">
-                <div className="info-icon">
+              <div className="info-item det">
+                <div className="info-icon det">
                   <ClockIcon size={32} color="var(--construction-orange)" />
                 </div>
                 <div>

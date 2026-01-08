@@ -163,7 +163,7 @@ function Home() {
             {projects.map((project, index) => (
               <div key={index} className="project-card">
                 <div className="project-image-placeholder">
-                  <img src={project.image} alt={project.title} className="project-image" />
+                  <img src={project.image} alt={project.title} className="project-image" loading="lazy" decoding="async" />
                 </div>
                 <div className="project-info">
                   <h3>{project.title}</h3>

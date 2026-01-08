@@ -27,15 +27,18 @@
 }
 
 .contact-info h2 {
-  color: var(--construction-black);
+  color: black;
   margin-bottom: 1.5rem;
 }
 
 .contact-intro {
-  color: var(--text-gray);
   line-height: 1.8;
   margin-bottom: 2.5rem;
 }
+.contact-intro.paragraph {
+ color: #000;
+}
+
 
 .info-item {
   display: flex;
@@ -46,6 +49,7 @@
   background-color: var(--off-white);
   border-radius: 8px;
 }
+
 
 .info-icon {
   flex-shrink: 0;
