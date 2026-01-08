@@ -332,8 +332,8 @@ const NickFaura = () => {
           <h2>Commission Custom Artwork</h2>
           <p className='para'>Interested in commissioning a mural, canvas painting, or custom art installation?</p>
           <div className="contact-info">
-            <h3>Nick Veloso-Faura</h3>
-            <p>Cebu-Based Artist</p>
+            <h3 className='para'>Nick Veloso-Faura</h3>
+            <p className='para'>Cebu-Based Artist</p>
             <p className="contact-phone">
               <svg
                 className="phone-icon"
@@ -352,7 +352,7 @@ const NickFaura = () => {
               <span> 0916 565 3931</span>
             </p>
 
-            <p className="contact-hashtag">#NickArts</p>
+            <p className="para">#NickArts</p>
           </div>
         </div>
       </section>
