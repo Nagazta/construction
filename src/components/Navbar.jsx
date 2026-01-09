@@ -13,8 +13,8 @@ function Navbar() {
           <li><Link to="/about">About Us</Link></li>
           <li><Link to="/services">Services</Link></li>
           <li><Link to="/projects">Past Projects</Link></li>
+          <li><Link to="/mural-art-services">Mural Art Services</Link></li>
           <li><Link to="/contact">Contact Us</Link></li>
-          <li><Link to ="/nick-faura">Nick Faura</Link></li>
         </ul>
       </div>
     </nav>
