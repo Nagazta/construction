@@ -17,13 +17,10 @@ function About() {
             <div className="about-text">
               <h2>Who We Are</h2>
               <p className='about'>
-                South Cebu Construction is a Cebu-based company owned by a millennial Cebuana who is a dedicated entrepreneur.
-                The start-up company provides well-organized work, well-oriented employees, and competitive quality to its
-                business clients and business partners.
+              South Cebu Construction is a Cebu-based construction company founded and led by a dedicated young Cebuana entrepreneur. As a growing start-up, the company is driven by a strong commitment to excellence, delivering meticulous workmanship, well-trained and values-oriented employees, and competitive, high-quality solutions to its business clients and partners.
               </p>
               <p className='about'>
-                South Cebu Construction is very detailed when it comes to their services to satisfy the clients' needs and demands.
-                We combine modern expertise with traditional craftsmanship to deliver exceptional construction solutions.
+               At South Cebu Construction, we believe that true quality lies in the details. From planning to project completion, no detail, no matter how small, is overlooked. We seamlessly combine modern construction expertise with traditional craftsmanship to provide reliable, efficient, and exceptional construction solutions.
               </p>
             </div>
             <div className="about-image-placeholder">
