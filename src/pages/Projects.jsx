@@ -78,10 +78,10 @@ function Projects() {
       imageType: 'image/webp'
     },
     {
-      title: 'Drainage System',
-      location: 'Tulay Minglanilla Cebu 6046',
-      scope: '245 M long drainage (60M canal/80pcs 18" RCPC), 15pcs of concrete manhole with concrete covers',
-      duration: '2 Months & 10 Days',
+      title: 'Asphalting Works',
+      location: 'General Milling Lapu Lapu',
+      scope: '1000 L.M',
+      duration: '3 days',
       category: 'Infrastructure',
       image: img3Fallback || img3,
       imageSrcSet: img3SrcSet,
