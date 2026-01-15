@@ -82,7 +82,7 @@ function Projects() {
       location: 'General Milling Lapu Lapu',
       scope: '1000 L.M',
       duration: '3 days',
-      category: 'Infrastructure',
+      category: 'Horizontal works',
       image: img3Fallback || img3,
       imageSrcSet: img3SrcSet,
       imageType: 'image/webp'
