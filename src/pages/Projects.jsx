@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { LocationIcon } from '../components/Icons';
 import './Projects.css';
@@ -391,7 +392,7 @@ function Projects() {
           <div className="projects-cta">
             <h2>Let's Build Your Next Project Together</h2>
             <p>Ready to discuss your construction needs? Get in touch with us today.</p>
-            <a href="/contact" className="btn btn-primary">Contact Us</a>
+            <Link to="/contact" className="btn btn-primary">Get in Touch</Link>
           </div>
         </div>
       </section>

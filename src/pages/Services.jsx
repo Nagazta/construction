@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { HomeIcon, BuildingIcon, HammerIcon, RulerIcon, BoxIcon, GlassIcon, CameraIcon, RoadIcon, CheckIcon } from '../components/Icons';
 import './Services.css';
 
@@ -148,7 +149,7 @@ function Services() {
           <div className="services-cta">
             <h2>Ready to Start Your Project?</h2>
             <p>Contact us today to discuss your construction needs and get a free consultation.</p>
-            <a href="/contact" className="btn btn-primary">Get in Touch</a>
+            <Link to="/contact" className="btn btn-primary">Get in Touch</Link>
           </div>
         </div>
       </section>
