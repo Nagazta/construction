@@ -1,272 +1,150 @@
-import React, { useState } from 'react';
-
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { PhoneIcon, LocationIcon, ClockIcon } from '../components/Icons';
 import './NickFaura.css';
-import paradiseImg from "../assets/images/nick/1.png";
-import churchImg from "../assets/images/nick/2.png";
-import sunsetImg from "../assets/images/nick/3.png";
-import mayonImg from "../assets/images/nick/4.png";
-import plantsImg from "../assets/images/nick/5.png";
-import letteringImg from "../assets/images/nick/6.png";
-import greekImg from "../assets/images/nick/7.png";
-import bricksImg from "../assets/images/nick/8.png";
-import epoxyImg from "../assets/images/nick/9.png";
-import flowerImg from "../assets/images/nick/10.png";
-import haspiImg from "../assets/images/nick/11.png";
-import abstractImg from "../assets/images/nick/12.png";
-import burntImg from "../assets/images/nick/13.png";
-import woodHaspiImg from "../assets/images/nick/14.png";
-import ceilingImg from "../assets/images/nick/15.png";
-import lakeImg from "../assets/images/nick/16.png";
-import seaImg from "../assets/images/nick/17.png";
-import supperImg from "../assets/images/nick/18.png";
-import jeepImg from "../assets/images/nick/19.png";
 
-import artistPhoto from "../assets/images/nick/nick.png";
+import paradiseImg  from '../assets/images/nick/1.png';
+import churchImg    from '../assets/images/nick/2.png';
+import sunsetImg    from '../assets/images/nick/3.png';
+import mayonImg     from '../assets/images/nick/4.png';
+import plantsImg    from '../assets/images/nick/5.png';
+import letteringImg from '../assets/images/nick/6.png';
+import greekImg     from '../assets/images/nick/7.png';
+import bricksImg    from '../assets/images/nick/8.png';
+import epoxyImg     from '../assets/images/nick/9.png';
+import flowerImg    from '../assets/images/nick/10.png';
+import haspiImg     from '../assets/images/nick/11.png';
+import abstractImg  from '../assets/images/nick/12.png';
+import burntImg     from '../assets/images/nick/13.png';
+import woodHaspiImg from '../assets/images/nick/14.png';
+import ceilingImg   from '../assets/images/nick/15.png';
+import lakeImg      from '../assets/images/nick/16.png';
+import seaImg       from '../assets/images/nick/17.png';
+import supperImg    from '../assets/images/nick/18.png';
+import jeepImg      from '../assets/images/nick/19.png';
+import artistPhoto  from '../assets/images/nick/nick.png';
 
-const ITEMS_PER_PAGE = 6;
+const PORTFOLIO = [
+  { title: 'The Paradise',              desc: '3D wall and ceiling paintings — approx. 30 sq m wall + 120 sq m ceiling', details: 'Saudi Arabia',         img: paradiseImg  },
+  { title: 'Church Wall Art',           desc: 'Mural art inside a church — water-based paint',                           details: '4m × 5m',             img: churchImg    },
+  { title: 'Sunset Sailing',            desc: 'Canvas painting commissioned by a foreign client',                        details: '4m × 2m',             img: sunsetImg    },
+  { title: 'Mayon Sunrise',             desc: 'Large canvas landscape painting',                                         details: '6m × 2.5m',           img: mayonImg     },
+  { title: 'The Plants',                desc: 'Water-based wall painting for a residential building',                    details: '3m × 3.5m',           img: plantsImg    },
+  { title: 'Lettering',                 desc: 'Custom lettering wall design for an office space',                        details: '3m × 2.5m',           img: letteringImg },
+  { title: 'Greek Theme',               desc: '3D wall art painting — Greek-inspired theme',                             details: 'Saudi Arabia',         img: greekImg     },
+  { title: 'Bricks & Leaves',           desc: 'Wall painting for a call center company',                                 details: 'Manila',               img: bricksImg    },
+  { title: 'Epoxy Counter Top',         desc: 'Marine plywood with epoxy finish counter top',                            details: 'Epoxy finish',         img: epoxyImg     },
+  { title: 'Flower & Coco',             desc: 'Canvas painting with client reference',                                   details: '1m × 1.5m',           img: flowerImg    },
+  { title: 'Haspi Painting',            desc: 'Marine plywood with free-hand haspi finish painting',                     details: 'Haspi technique',      img: haspiImg     },
+  { title: 'Abstract',                  desc: 'Canvas abstract painting',                                                details: '2.5m × 1.5m',         img: abstractImg  },
+  { title: 'Burnt Effect',              desc: 'Haspi wood stain with roller technique',                                  details: 'Custom technique',     img: burntImg     },
+  { title: 'Wood Haspi',               desc: 'Tubular with haspi finish painting in ceiling',                            details: 'Custom technique',     img: woodHaspiImg },
+  { title: 'Ceiling & Doors',           desc: 'Haspi painting of ceiling and doors for a residential building',          details: 'Custom technique',     img: ceilingImg   },
+  { title: 'Lake and Ducks',            desc: 'Nature-theme mural inside a resort',                                      details: 'Outdoor installation', img: lakeImg      },
+  { title: 'Under the Sea',             desc: 'Aquatic-theme mural for a resort',                                        details: 'Aquatic theme',        img: seaImg       },
+  { title: 'The Last Supper',           desc: 'Large-scale religious canvas painting',                                   details: '5m × 4m',             img: supperImg    },
+  { title: 'Pinoy Jeep',               desc: 'Cultural wall painting celebrating Filipino heritage',                     details: '5m × 3m',             img: jeepImg      },
+];
 
+const EXPERIENCES = [
+  { title: 'Freelance Artist',                  company: 'Philippine-based',       period: 'Present',       location: 'Cebu, Philippines', desc: 'Canvas painting, furniture art, mural art, and custom commissions.' },
+  { title: 'Interior Artist',                   company: 'Various Clients',        period: '2001 – 2013',   location: 'Saudi Arabia',      desc: 'Large-scale 3D ceiling and wall paintings for luxury residential and commercial buildings.' },
+  { title: 'Portrait Painting & Signboards',    company: 'Maitland Smith Company', period: '1989 – 1994',   location: 'Cebu / Sabah',      desc: 'Portrait painting and manual signboard creation across Cebu and Sabah, Malaysia.' },
+  { title: 'Company Head Artist',               company: 'Canvas Section',         period: 'Earlier Career', location: 'Philippines',       desc: 'Led canvas artwork production and a team of assistant artists for showroom displays.' },
+];
 
+const PER_PAGE = 6;
 
+export default function NickFaura() {
+  const [page, setPage] = useState(1);
+  const total    = Math.ceil(PORTFOLIO.length / PER_PAGE);
+  const visible  = PORTFOLIO.slice((page - 1) * PER_PAGE, page * PER_PAGE);
+  function goPage(n) {
+    setPage(n);
+    const element = document.querySelector('.nick-portfolio');
+    if (element) {
+      const offset = 100; // offset for fixed navbar
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
 
-const handlePageChange = (page) => {
-  setCurrentPage(page);
-};
-
-
-const NickFaura = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const experiences = [
-    {
-      title: "Freelance Artist",
-      company: "Philippine-based",
-      period: "Present",
-      location: "Cebu, Philippines",
-      description: "Canvas painting, furniture art, mural art, and custom commissions"
-    },
-    {
-      title: "Interior Artist",
-      company: "Various Clients",
-      period: "2001–2013",
-      location: "Saudi Arabia",
-      description: "Large-scale 3D ceiling and wall paintings for luxury residential and commercial buildings"
-    },
-    {
-      title: "Portrait Painting & Manual Signboards",
-      company: "Maitland Smith Company",
-      period: "1989–1994",
-      location: "Cebu, Philippines / Sabah, Malaysia",
-      description: "Portrait painting and signboard creation (1989–1991 Cebu, 1991–1994 Sabah)"
-    },
-    {
-      title: "Company Head Artist",
-      company: "Canvass Section",
-      period: "Earlier Career",
-      location: "Philippines",
-      description: "Painting canvas artworks and leading assistant artists for showroom displays"
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
-  ];
-
-  const portfolio = [
-    
-    {
-      title: "The Paradise",
-      description: "Around 30sq m wall 3D painting and around 120 sq m ceiling 3D art works at Saudi Arabia",
-      details: "Saudi Arabia",
-      image: paradiseImg
-    },
-    {
-      title: "Church Wall Art",
-      description: "4m x 5m Mural Art inside the church. Made of Waterbased painting material ",
-      details: "4m × 5m, water-based paint",
-      image: churchImg
-    },
-    {
-      title: "Sunset Sailing",
-      description: "4m x 2m Canvass painting of the Foreigner client",
-      details: "4m × 2m",
-      image: sunsetImg
-    },
-    {
-      title: "Mayon Sunrise",
-      description: "6m x 2.5m Canvass Painting ",
-      details: "6m × 2.5m",
-      image: mayonImg
-    },
-    {
-      title: "The Plants",
-      description: "Water based painting of the client 3m x 3.5m wall for she wanted a some green plants inside the residential building ",
-      details: "3m x 3.5m",
-      image: plantsImg
-    },
-    {
-      title: "Lettering",
-      description: "Wall Design for office ",
-      details: "3m x 2.5m",
-      image: letteringImg,
-    },
-    {
-      title: "Greek Theme",
-      description: "3D WALL ART PAINTING AT SAUDI ARABIA GREEK INSPIRED THEME BY THE CLIENT",
-      details: "Saudi Arabia",
-      image: greekImg,
-    },
-    {
-      title: "Bricks & Leaves",
-      description: "Painted Bricks and Leaves in a wall of a Call Center Company in Manila",
-      details: "Manila",
-      image: bricksImg,
-    },
-    {
-      title: "Marine Plywood with Epoxy Finish",
-      description: "Epoxy Finish counter top witg marine based only",
-      details: "Epoxy finish",
-      image: epoxyImg,
-    },
-    {
-      title: "Flower & Coco",
-      description: "1m x 1.5m Canvass painting of client with referrance",
-      details: "1m x 1.5m",
-      image: flowerImg,
-    },
-    {
-      title: "Haspi Painting",
-      description: "Marine plywood with FREE HAND HASPI FINISH PAINTING ",
-      details: "Haspi",
-      image: haspiImg
-    },
-    {
-      title: "Abstract",
-      description: "2.5m x 1.5m Canvass abstract painting",
-      details: "2.5m x 1.5m",
-      image: abstractImg,
-    },
-    {
-      title: "Burnt Effect",
-      description: "HASPI WOOD STAIN WITH ROLLER",
-      details: "Custom technique",
-       image: burntImg,
-    },
-    {
-      title: "Wood Haspi",
-      description: "TUBULAR WITH HASPI FINISH PAINTING IN CEILING",
-      details: "Custom technique",
-      image: woodHaspiImg,
-    },
-    {
-      title: "Ceiling & Doors",
-      description: "HASPI PAINTING OF CEILING AND DOORS OF RESIDENTIAL BUILDING ",
-      details: "Custom technique",
-      image: ceilingImg,
-    },
-    {
-      title: "Lake and Ducks",
-      description: "Nature theme inside the resort",
-      details: "Outdoor installation",
-      image: lakeImg
-    },
-    {
-      title: "Under the Sea",
-      description: "Under the sea theme of the resort",
-      details: "Aquatic theme",
-      image: seaImg
-    },
-    {
-      title: "The Last Supper",
-      description: "Religious canvas",
-      details: "5m × 4m",
-      image: supperImg
-    },
-    {
-      title: "Pinoy Jeep",
-      description: "Cultural wall painting",
-      details: "5m × 3m",
-      image: jeepImg
-    }
-  ];
-  
-  const totalPages = Math.ceil(portfolio.length / ITEMS_PER_PAGE);
-
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const endIndex = startIndex + ITEMS_PER_PAGE;
-  const currentPortfolio = portfolio.slice(startIndex, endIndex);
-
+  }
 
   return (
-    <div className="nick-faura">
-      {/* Hero Section */}
-      <section className="nick-faura-hero">
-        <div className="container">
+    <main className="page-nick">
+
+      {/* ── Page Hero ── */}
+      <section className="page-hero">
+        <div className="page-hero-bg" />
+        <div className="container page-hero-inner">
+          <p className="page-eyebrow"><span className="eyebrow-rule" />Mural Art Services</p>
           <h1>Nick Veloso-Faura</h1>
-          <p className="hero-subtitle">Cebu-Based Mural & Fine Artist</p>
-          <p className="hero-tagline">More Than 30 Years of Artworks</p>
+          <p className="page-hero-sub">Cebu-Based Mural &amp; Fine Artist — Over 30 Years of Artworks</p>
         </div>
       </section>
 
-      {/* Artist Photo & Intro Section */}
-      <section className="artist-intro">
-        <div className="container">
-          <div className="artist-photo-section">
-            <div className="artist-photo-container">
-              {artistPhoto ? (
-                <img
-                  src={artistPhoto}
-                  alt="Nick Veloso-Faura"
-                  className="artist-photo"
-                  loading="eager"
-                  decoding="async"
-                />
-              ) : (
-                <div className="artist-photo-placeholder">
-                  <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-                    <circle
-                      cx="60"
-                      cy="45"
-                      r="22"
-                      fill="var(--construction-orange)"
-                      opacity="0.3"
-                    />
-                    <path
-                      d="M20 105 C20 72, 40 60, 60 60 C80 60, 100 72, 100 105 Z"
-                      fill="var(--construction-orange)"
-                      opacity="0.3"
-                    />
-                  </svg>
-                  <p className="photo-placeholder-text">Artist Photo</p>
-                </div>
-              )}
-
-              <p className="artist-signature">#NickArts</p>
+      {/* ── Artist Intro ── */}
+      <section className="nick-intro">
+        <div className="container nick-intro-grid">
+          <div className="nick-photo-wrap">
+            <img src={artistPhoto} alt="Nick Veloso-Faura" className="nick-photo" loading="eager" decoding="async" />
+            <div className="nick-photo-label">
+              <strong>Nick Veloso-Faura</strong>
+              <span>#NickArts</span>
             </div>
           </div>
 
-          <div className="intro-content">
-            <h2>About the Artist</h2>
+          <div className="nick-copy">
+            <p className="section-eyebrow-inline">About the Artist</p>
+            <h2>A Lifetime Dedicated to Art</h2>
             <p>
-              Nick Veloso-Faura is a Cebu-born and raised artist with more than three
-              decades of experience in both local and international art projects. His
-              work spans mural art, canvas painting, 3D wall and ceiling art, epoxy
-              finishes, lettering, and custom artistic installations. Through years of
-              practice and dedication, he brings thoughts, stories, and emotions to
-              life through visual art.
+              Nick Veloso-Faura is a Cebu-born artist with more than three decades of experience in both local
+              and international art projects. His work spans mural art, canvas painting, 3D wall and ceiling
+              art, epoxy finishes, lettering, and custom artistic installations.
             </p>
+            <p>
+              Through years of practice and dedication across the Philippines, Saudi Arabia, and Malaysia,
+              he brings thoughts, stories, and emotions to life through visual art — turning blank walls into
+              immersive experiences.
+            </p>
+            <a href="tel:09165653931" className="btn btn-gold nick-contact-btn">
+              <PhoneIcon size={16} color="currentColor" />Commission Artwork
+            </a>
           </div>
         </div>
       </section>
 
-
-      {/* Experience Section */}
-      <section className="experience-section">
+      {/* ── Experience Timeline ── */}
+      <section className="nick-experience">
         <div className="container">
-          <h2>Experience & Career</h2>
+          <header className="section-hdr">
+            <p className="section-eyebrow">Career</p>
+            <h2>Experience &amp; Background</h2>
+            <p className="section-sub">Over three decades of artistry — from the Philippines to the Middle East.</p>
+          </header>
+
           <div className="timeline">
-            {experiences.map((exp, index) => (
-              <div key={index} className="timeline-item">
-                <div className="timeline-marker"></div>
-                <div className="timeline-content">
-                  <h3>{exp.title}</h3>
-                  <p className="experience-company">{exp.company}</p>
-                  <p className="experience-period">{exp.period} • {exp.location}</p>
-                  <p className="experience-description">{exp.description}</p>
+            {EXPERIENCES.map(({ title, company, period, location, desc }, i) => (
+              <div className="timeline-item" key={i}>
+                <div className="timeline-marker" />
+                <div className="timeline-body">
+                  <div className="timeline-meta">
+                    <span className="tl-period">
+                      <ClockIcon size={13} color="var(--gold)" />{period}
+                    </span>
+                    <span className="tl-location">
+                      <LocationIcon size={13} color="var(--gold)" />{location}
+                    </span>
+                  </div>
+                  <h3>{title}</h3>
+                  <p className="tl-company">{company}</p>
+                  <p>{desc}</p>
                 </div>
               </div>
             ))}
@@ -274,90 +152,61 @@ const NickFaura = () => {
         </div>
       </section>
 
-      {/* Portfolio Section */}
-      <section className="portfolio-section">
+      {/* ── Portfolio Gallery ── */}
+      <section className="nick-portfolio">
         <div className="container">
-          <h2>Selected Artworks</h2>
-          <p className="portfolio-description">A curated selection of mural, canvas, and custom artworks completed locally and abroad.</p>
-          <div className="portfolio-grid">
-            {currentPortfolio.map((item, index) => (
-              <div key={index} className="portfolio-card">
-                <div className="portfolio-image">
-                  <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
+          <header className="section-hdr">
+            <p className="section-eyebrow">Portfolio</p>
+            <h2>Selected Artworks</h2>
+            <p className="section-sub">A curated selection of mural, canvas, and custom artworks completed locally and internationally.</p>
+          </header>
+
+          <div className="art-grid">
+            {visible.map(({ title, desc, details, img }, i) => (
+              <article className="art-card" key={i}>
+                <div className="art-img-wrap">
+                  <img src={img} alt={title} loading="lazy" decoding="async" />
                 </div>
-                <div className="portfolio-info">
-                  <h3>{item.title}</h3>
-                  <p className="portfolio-description-text">{item.description}</p>
-                  <p className="portfolio-details">{item.details}</p>
+                <div className="art-body">
+                  <h3>{title}</h3>
+                  <p>{desc}</p>
+                  <span className="art-detail">{details}</span>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
-          {/* PAGINATION */}
-          <div className="pagination">
-            <button
-              className="pagination-btn"
-              disabled={currentPage === 1}
-              onClick={() => setCurrentPage(currentPage - 1)}
-            >
-              Previous
-            </button>
 
-            <div className="pagination-numbers">
-              {Array.from({ length: totalPages }, (_, i) => (
-                <button
-                  key={i}
-                  className={`pagination-number ${currentPage === i + 1 ? 'active' : ''}`}
-                  onClick={() => setCurrentPage(i + 1)}
-                >
-                  {i + 1}
-                </button>
-              ))}
+          {total > 1 && (
+            <div className="pagination">
+              <button className="pag-btn" onClick={() => goPage(page - 1)} disabled={page === 1}>Previous</button>
+              <div className="pag-numbers">
+                {Array.from({ length: total }, (_, i) => (
+                  <button key={i} className={`pag-num${page === i + 1 ? ' pag-num--active' : ''}`} onClick={() => goPage(i + 1)}>{i + 1}</button>
+                ))}
+              </div>
+              <button className="pag-btn" onClick={() => goPage(page + 1)} disabled={page === total}>Next</button>
             </div>
+          )}
+        </div>
+      </section>
 
-            <button
-              className="pagination-btn"
-              disabled={currentPage === totalPages}
-              onClick={() => setCurrentPage(currentPage + 1)}
-            >
-              Next
-            </button>
+      {/* ── Commission CTA ── */}
+      <section className="nick-cta-section">
+        <div className="cta-bg" />
+        <div className="container cta-inner">
+          <div className="cta-copy">
+            <h2>Commission Custom Artwork</h2>
+            <p>Interested in a mural, canvas painting, or custom art installation? Let's talk.</p>
+          </div>
+          <div className="cta-btns">
+            <a href="tel:09165653931" className="btn btn-gold" id="nick-cta-phone">
+              <PhoneIcon size={16} color="currentColor" />0916 565 3931
+            </a>
+            <Link to="/contact" className="btn btn-ghost" id="nick-cta-contact">Send a Message</Link>
           </div>
         </div>
       </section>
 
-      {/* Artist CTA Section */}
-      <section className="artist-cta">
-        <div className="container">
-          <h2>Commission Custom Artwork</h2>
-          <p className='para'>Interested in commissioning a mural, canvas painting, or custom art installation?</p>
-          <div className="contact-info">
-            <h3 className='para'>Nick Veloso-Faura</h3>
-            <p className='para'>Cebu-Based Artist</p>
-            <p className="contact-phone">
-              <svg
-                className="phone-icon"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <path
-                  d="M3 5.5C3 4.12 4.12 3 5.5 3H8.2C8.9 3 9.53 3.49 9.7 4.17L10.6 7.72C10.74 8.28 10.5 8.86 10.01 9.15L8.15 10.27C9.31 12.9 11.1 14.69 13.73 15.85L14.85 13.99C15.14 13.5 15.72 13.26 16.28 13.4L19.83 14.3C20.51 14.47 21 15.1 21 15.8V18.5C21 19.88 19.88 21 18.5 21H17C9.27 21 3 14.73 3 7V5.5Z"
-                  fill="currentColor"
-                />
-              </svg>
-              <span> 0916 565 3931</span>
-            </p>
-
-            <p className="para">#NickArts</p>
-          </div>
-        </div>
-      </section>
-    </div>
+    </main>
   );
-};
-
-export default NickFaura;
+}

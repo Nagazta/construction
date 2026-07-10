@@ -4,7 +4,7 @@ import { LocationIcon, EmailIcon, PhoneIcon, ClockIcon } from '../components/Ico
 import { EMAILJS_CONFIG } from '../config/emailjs.config';
 import './Contact.css';
 
-function Contact() {
+export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -27,7 +27,6 @@ function Contact() {
     setStatus('');
 
     try {
-      // Get current date and time
       const now = new Date();
       const dateTime = now.toLocaleString('en-US', {
         timeZone: 'Asia/Manila',
@@ -66,148 +65,158 @@ function Contact() {
     }
   };
 
+  const contactDetails = [
+    {
+      Icon: LocationIcon,
+      title: 'Our Location',
+      lines: ['Minglanilla, Cebu, 6046']
+    },
+    {
+      Icon: EmailIcon,
+      title: 'Email Address',
+      lines: ['southcebucons@gmail.com']
+    },
+    {
+      Icon: PhoneIcon,
+      title: 'Phone Numbers',
+      lines: ['0953-177-4035', '0926-936-9364']
+    },
+    {
+      Icon: ClockIcon,
+      title: 'Business Hours',
+      lines: ['Monday - Saturday: 8:00 AM - 6:00 PM', 'Sunday: Closed']
+    }
+  ];
+
   return (
-    <div className="contact">
-      <section className="contact-hero">
-        <div className="container">
+    <main className="page-contact">
+      
+      {/* ── Page Hero ── */}
+      <section className="page-hero">
+        <div className="page-hero-bg" />
+        <div className="container page-hero-inner">
+          <p className="page-eyebrow"><span className="eyebrow-rule" />Contact Us</p>
           <h1>Get in Touch</h1>
-          <p>Let's discuss your construction project</p>
+          <p className="page-hero-sub">Have a project in mind? Contact us today to discuss your construction needs and get a consultation.</p>
         </div>
       </section>
 
-      <section className="contact-main">
+      {/* ── Main Content Grid ── */}
+      <section className="contact-body">
         <div className="container">
           <div className="contact-grid">
-            <div className="contact-info">
-              <h2>Contact Information</h2>
-              <p className="contact-intro paragraph">
-                Ready to start your construction project? Reach out to us and we'll
-                be happy to discuss your needs and provide a free consultation.
+            
+            {/* Info Cards Side */}
+            <div className="contact-info-col">
+              <p className="section-eyebrow-inline">Contact Details</p>
+              <h2>How to Reach Us</h2>
+              <p className="contact-intro-desc">
+                We'll be happy to answer your questions, walk you through our services, and draft a detailed estimate for your project.
               </p>
 
-              <div className="info-item det">
-                <div className="info-icon det">
-                  <LocationIcon size={32} color="var(--construction-orange)" />
-                </div>
-                <div>
-                  <h4>Location</h4>
-                  <p>Minglanilla, Cebu, 6046</p>
-                </div>
-              </div>
-
-              <div className="info-item det">
-                <div className="info-icon det">
-                  <EmailIcon size={32} color="var(--construction-orange)" />
-                </div>
-                <div>
-                  <h4>Email</h4>
-                  <p>southcebucons@gmail.com</p>
-                </div>
-              </div>
-
-              <div className="info-item det">
-                <div className="info-icon det">
-                  <PhoneIcon size={32} color="var(--construction-orange)" />
-                </div>
-                <div>
-                  <h4>Phone</h4>
-                  <p>0926-936-9364</p>
-                </div>
-              </div>
-
-              <div className="info-item det">
-                <div className="info-icon det">
-                  <ClockIcon size={32} color="var(--construction-orange)" />
-                </div>
-                <div>
-                  <h4>Business Hours</h4>
-                  <p>Monday - Saturday: 8:00 AM - 6:00 PM</p>
-                  <p>Sunday: Closed</p>
-                </div>
+              <div className="contact-info-cards">
+                {contactDetails.map(({ Icon, title, lines }, i) => (
+                  <div className="contact-info-card" key={i}>
+                    <div className="info-card-icon">
+                      <Icon size={24} color="var(--gold)" />
+                    </div>
+                    <div className="info-card-text">
+                      <h3>{title}</h3>
+                      {lines.map((line, idx) => (
+                        <p key={idx}>{line}</p>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div className="contact-form-container">
-              <h2>Send Us a Message</h2>
-              <form onSubmit={handleSubmit} className="contact-form">
-                <div className="form-group">
-                  <label htmlFor="name">Name *</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    placeholder="Your full name"
-                  />
-                </div>
+            {/* Form Side */}
+            <div className="contact-form-col">
+              <div className="contact-form-wrapper">
+                <h3>Send Us a Message</h3>
+                <p>Fill out the form below and we will respond as soon as possible.</p>
 
-                <div className="form-group">
-                  <label htmlFor="email">Email *</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="phone">Phone Number *</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    placeholder="+63 XXX XXX XXXX"
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="message">Message *</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows="6"
-                    placeholder="Tell us about your project..."
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="btn btn-primary"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
-                </button>
-
-                {status === 'success' && (
-                  <div className="status-message success">
-                    Thank you for your message! We'll get back to you soon.
+                <form onSubmit={handleSubmit} className="contact-form-el">
+                  <div className="form-input-group">
+                    <label htmlFor="name">Full Name *</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      placeholder="Your full name"
+                    />
                   </div>
-                )}
 
-                {status === 'error' && (
-                  <div className="status-message error">
-                    Sorry, there was an error sending your message. Please try again or contact us directly.
+                  <div className="form-input-group">
+                    <label htmlFor="email">Email Address *</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      placeholder="your.email@example.com"
+                    />
                   </div>
-                )}
-              </form>
+
+                  <div className="form-input-group">
+                    <label htmlFor="phone">Phone Number *</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      placeholder="+63 XXX XXX XXXX"
+                    />
+                  </div>
+
+                  <div className="form-input-group">
+                    <label htmlFor="message">Message *</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      rows="5"
+                      placeholder="Tell us about your project or inquiry..."
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="btn btn-gold submit-btn"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Sending Message...' : 'Send Message'}
+                  </button>
+
+                  {status === 'success' && (
+                    <div className="contact-status success">
+                      Thank you! Your message was sent successfully. We'll be in touch soon.
+                    </div>
+                  )}
+
+                  {status === 'error' && (
+                    <div className="contact-status error">
+                      Sorry, there was an error sending your message. Please try again or call us directly.
+                    </div>
+                  )}
+                </form>
+              </div>
             </div>
+
           </div>
         </div>
       </section>
-    </div>
+
+    </main>
   );
 }
-
-export default Contact;
